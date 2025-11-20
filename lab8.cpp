@@ -19,23 +19,22 @@ int main() {
   cout << "Enter year: ";
   cin >> year;
   
-  // Простой расчет начального дня недели
-  // 1 января 2000 года было субботой (5)
-  weekDay = 5; // начальный день для 2000 года
   
-  // Считаем смещение от 2000 года
+  weekDay = 5;
+  
+ 
   for (int y = 2000; y < year; ++y) {
-    // Обычный год +1 день, високосный +2 дня
+    /
     if (y % 4 == 0 && (y % 100 != 0 || y % 400 == 0)) {
       weekDay += 2; // високосный год
     } else {
       weekDay += 1; // обычный год
     }
   }
-  weekDay = weekDay % 7; // получаем день недели (0-6)
+  weekDay = weekDay % 7; 
   
   for (month = 1; month <= 12; ++month) {
-    // Количество дней в месяце
+    
     if (month == 2) {
       if (year % 4 == 0 && (year % 100 != 0 || year % 400 == 0)) {
         daysInMonth = 29;
@@ -48,7 +47,6 @@ int main() {
       daysInMonth = 31;
     }
     
-    // Название месяца
     string monthName;
     if (month == 1) monthName = "January";
     else if (month == 2) monthName = "February";
@@ -63,16 +61,13 @@ int main() {
     else if (month == 11) monthName = "November";
     else monthName = "December";
     
-    // Вывод заголовка
     cout << "\n" << monthName << " " << year << "\n";
     cout << "Mo Tu We Th Fr Sa Su\n";
     
-    // Пробелы перед первым днем
     for (int i = 0; i < weekDay; ++i) {
       cout << "   ";
     }
     
-    // Вывод дней
     for (day = 1; day <= daysInMonth; ++day) {
       if (day < 10) cout << " ";
       cout << day << " ";
@@ -88,4 +83,5 @@ int main() {
   }
   
   return 0;
+
 }
